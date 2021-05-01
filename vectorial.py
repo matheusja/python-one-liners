@@ -6,9 +6,9 @@ scalar_mult = lambda l1, l2 : sum(map(mul, l1, l2))
 
 
 # apply function to list of lists
-map_list_of_lists = lambda f, *mats : list(map((lambda *lines : list(map(f, *lines))), *mats))
+map_list_of_lists = lambda f, *mats : [[f(entry) for entry in line] for line in mats]
 # multiply every element of a iterable by a "scalar" value 'k'
-mult_list_by_escalar = lambda k, l : map((lambda x : x * k), l)
+mult_list_by_escalar = lambda k, l : (x * k for x in l)
 # add, value by value, two iterable 
 # trims the iterable with more values
 matricial_add = lambda l1, l2 : map(add, l1, l2)
