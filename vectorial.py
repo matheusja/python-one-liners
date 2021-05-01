@@ -1,4 +1,4 @@
-import operator import *
+from operator import *
 
 # scalar_mult([a0, a1, a2, ..., an], [b0, b1, b2, ..., bm]) = a0 * b0  +  a1 * b1  +  a2 * b2  +  ...  + an * bn
 # trims the iterable with more values
@@ -16,7 +16,7 @@ matricial_add = lambda l1, l2 : map(add, l1, l2)
 matricial_mult = lambda mat, x : list(map((lambda l : scalar_mult(l, x)), mat))
 
 
-from iterator import sliding_window
+from iterator import sliding_window_tee
 # convolution_1d([a0, ..., ak], [b0, b1, ... bm]) = [a0*b0+a1*b1+..ak*bk, a0*b1+a1*b2+...+ak+b(k+1), ..., a0*b(m-k)+...+ak*bm]
 # Actually cross-correlation
-convolution_1d = lambda k, l : (scalar_mult(k, slid_l):  for slid_l in sliding_window_tee(l, len(k)))
+convolution_1d = lambda k, l : (scalar_mult(k, slid_l) for slid_l in sliding_window_tee(l, len(k)))

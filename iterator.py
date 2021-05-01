@@ -1,4 +1,4 @@
-import itertools import *
+from itertools import *
 
 # sliding_window([a0, a1, ..., an], k) = [(a0, a1, ..., ak), (a1, a2, a3, ... a(k+1)), ..., (a(n-k+1), a(n-k+2), ... an)]
 
